@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>App Selection</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .card {
+            width: 400px;
+            margin: 20px auto;
+            padding: 20px;
+            border: 1px solid #ddd;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        .app-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+        }
+
+        .app-item {
+            text-align: center;
+            padding: 10px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+            border-radius: 8px;
+            border: 2px solid transparent;
+        }
+
+        .app-item img {
+            width: 60px;
+            height: 60px;
+        }
+
+        .app-item p {
+            margin-top: 10px;
+            font-size: 14px;
+        }
+
+        
+        .app-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        
+        .app-item.selected {
+            border-color: #007bff;
+            box-shadow: 0 0 10px rgba(0, 123, 255, 0.5);
+        }
+
+        .add-new-app {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100px;
+        }
+
+        .add-more-btn {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            margin-top: 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .add-more-btn:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="card">
+        <h2>Apps</h2>
+        <div class="app-grid">
+            <div class="app-item">
+                <img src="https://raw.githubusercontent.com/s-matyukevich/raspberry-pi-os/master/images/slack.png"alt="Slack">
+                <p>Slack</p>
+            </div>
+            <div class="app-item">
+                <img src="https://cdna.artstation.com/p/assets/images/images/037/099/406/large/xiaoguang-yin-1-4.jpg?1619487500" alt="Trello">
+                <p>Trello</p>
+            </div>
+            <div class="app-item">
+                <img src="https://3.bp.blogspot.com/-lYF3urw5rE4/Wih0UgeTQWI/AAAAAAAATuQ/6IE6RWq8pBgrkVJD4vY_Eyd9smNZsLc4gCLcBGAs/s1600/Lebih%2BMengenal%2BFitur%2BJump%2BBreak%2BBlogspot.png"
+                    alt="RealtimeBoard">
+                <p>RealtimeBoard</p>
+            </div>
+            <div class="app-item">
+                <img src="https://avatars.mds.yandex.net/i?id=1b6012db093d4f0b49878b92a1acfeaea8e927e4-5498038-images-thumbs&n=13" alt="Jira">
+                <p>Jira</p>
+            </div>
+            <div class="app-item">
+                <div class="add-new-app">
+                    <img src="https://www.clipartmax.com/png/full/225-2254903_creepy-blinking-eyes-gif-download-third-eye-animated.png" alt="">
+                    <p>+ Add</p>
+                </div>
+            </div>
+            <div class="app-item">
+                <img src="https://cdn0.iconfinder.com/data/icons/social-circle-3/72/Dropbox-1024.png" alt="Dropbox">
+                <p>Dropbox</p>
+            </div>
+        </div>
+        <button class="add-more-btn">ADD MORE APPS</button>
+    </div>
+
+    <script>
+
+        const appItems = document.querySelectorAll('.app-item');
+
+    
+        appItems.forEach(item => {
+            item.addEventListener('click', () => {
+            
+                item.classList.toggle('selected');
+            });
+        });
+    </script>
+</body>
+
+</html>
